@@ -1,7 +1,7 @@
 import "./Smiley.css";
 
-function Smiley(smiley) {
-  return <div>{smiley.image}</div>;
+function Smiley(props) {
+  return <div>{props.smiley.image}</div>;
 }
 
 export default Smiley;
