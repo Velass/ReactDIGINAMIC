@@ -1,16 +1,11 @@
 import "./App.css";
-import Smiley from "./components/Smiley";
-import { smileys } from "./models";
+import Profile from "./components/profile/profile";
 
 function App() {
   return (
     <div className="app">
-      <h2>Quelle est ton humeur du jour ?</h2>
-      <div className="smileys-box">
-        {smileys.map((smiley) => (
-          <Smiley key={smiley.id} smiley={smiley}></Smiley>
-        ))}
-      </div>
+      <h1>Profiles</h1>
+      <Profile />
     </div>
   );
 }

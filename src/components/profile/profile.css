@@ -1,0 +1,13 @@
+.profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.profile {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 200px;
+}
