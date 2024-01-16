@@ -1,10 +1,15 @@
 import "./Smiley.css";
 
-function Smiley({ smiley, setSmiley }) {
-  function handle(smiley) {
-    setSmiley(smiley);
+function Smiley({ smiley, selectSmiley }) {
+  function handleClick() {
+    selectSmiley(smiley.id);
   }
-  return <button onClick={() => handle(smiley)}>{smiley.image}</button>;
+
+  return (
+    <div onClick={handleClick} className={smiley.selected ? "selected" : ""}>
+      {smiley.image}
+    </div>
+  );
 }
 
 export default Smiley;

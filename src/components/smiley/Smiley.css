@@ -1,3 +1,8 @@
+.smileys-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .smileys-box > div {
   padding: 30px;
   font-size: 2rem;
@@ -6,13 +11,16 @@
   transition: opacity 0.3s;
 }
 
-.smileys-box > button:hover {
+.smileys-box > div:hover {
   opacity: 1;
 }
 
-.smileys-box > button:active {
+.smileys-box > div:active {
   transform: scale(0.7);
 }
-.smiley-button.selected {
-  border: 2px solid #007bff; /* Bordure bleue pour indiquer la sélection */
+
+.selected {
+  transform: scale(1.8);
+  text-shadow: 3px 3px 3px black;
+  filter: saturate(100);
 }
