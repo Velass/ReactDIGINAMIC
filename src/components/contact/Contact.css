@@ -11,3 +11,8 @@
   text-align: center;
   width: 200px;
 }
+
+.card {
+  display: grid;
+  place-content: center;
+}
