@@ -1,21 +1,21 @@
 export const smileys = [
   {
-    id: "bbd6678b-efec-4804-b4af-c6dc2c5667dd",
-    label: "Soleil",
-    image: "☀️",
-  },
-  {
-    id: "99a8c826-f061-4a9d-96fd-37a23ddcde90",
+    id: "fe979bcc-8b8a-4fb9-8d3b-3c31200ace3e",
     label: "Lune",
     image: "🌛",
   },
   {
-    id: "73f5b9a7-767d-412e-bd1c-25109a6a1fb5",
+    id: "a204a475-bfae-49c8-bce2-9fed2367f077",
+    label: "Soleil",
+    image: "☀️",
+  },
+  {
+    id: "3f2f9724-dc5e-4b6c-b9ab-d48ed396886b",
     label: "Nuage",
     image: "☁️",
   },
   {
-    id: "ba0be2a6-b952-4d4c-a9d0-ae1be99dc630",
+    id: "1b3ac9e2-068d-4c2c-a960-4297f135a7b3",
     label: "Eclair",
     image: "⚡",
   },
