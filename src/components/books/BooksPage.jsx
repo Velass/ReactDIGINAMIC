@@ -11,6 +11,7 @@ const BooksPage = () => {
       <div>
         {tableBooks.map((book) => (
           <div key={book.id}>
+            <div>link : {book.link}</div> 
             <div>titre : {book.title}</div> 
             <div>autheur : {book.author}</div>
           </div>
