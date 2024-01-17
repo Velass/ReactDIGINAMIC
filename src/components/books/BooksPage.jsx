@@ -24,9 +24,11 @@ const BooksPage = () => {
               <img src={book.imageLink} alt={book.title} className="book-image" /> 
               <div className="book-title">Titre : {book.title}</div> 
               <div className="book-author">Auteur : {book.author}</div>
-            </Link>
+              </Link>
               <div className='buttons'>
+              <Link to={`/livreModify/${book.id}`} className="book-link">
                 <button>Modifier</button>
+              </Link>
                 <button onClick={() => deleteBook(book)}>Supprimer</button>
               </div>
           </div>
