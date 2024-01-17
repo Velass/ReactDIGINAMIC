@@ -11,6 +11,17 @@ export const BooksProvider = ({ children }) => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
   };
 
+  const deleteBook =(book) => {
+    const updateBook = tableBooks.filter((tablebook) => tablebook.id !== book.id )
+    setTableBooks(updateBook)
+
+  }
+  const modifyBook =(book) => {
+    const updateBook = tableBooks.filter((tablebook) => tablebook.id !== book.id )
+    setTableBooks(updateBook)
+
+  }
+
   const sortBooksByAuthor = (books, order) => {
     return books.sort((a, b) => {
       const authorA = a.author.toLowerCase();
@@ -30,6 +41,7 @@ export const BooksProvider = ({ children }) => {
     tableBooks: sortedBooks,
     sortOrder,
     toggleSortOrder,
+    deleteBook,
   };
 
   return (

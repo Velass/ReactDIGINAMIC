@@ -5,7 +5,9 @@ import { BooksContext } from '../../utils/context/BooksContext';
 import './BooksPage.css';
 
 const BooksPage = () => {
-  const { tableBooks, sortOrder, toggleSortOrder } = useContext(BooksContext);
+  const { tableBooks, sortOrder, toggleSortOrder, deleteBook } = useContext(BooksContext);
+
+
 
   return (
     <div className="books-page">
@@ -23,6 +25,10 @@ const BooksPage = () => {
               <div className="book-title">Titre : {book.title}</div> 
               <div className="book-author">Auteur : {book.author}</div>
             </Link>
+              <div className='buttons'>
+                <button>Modifier</button>
+                <button onClick={() => deleteBook(book)}>Supprimer</button>
+              </div>
           </div>
         ))}
       </div>
