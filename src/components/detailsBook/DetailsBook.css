@@ -1,0 +1,42 @@
+
+
+
+.details-book {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+.book-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+.infoSupp {
+  text-align: center;
+}
+
+
+.infoSupp > div {
+  margin-bottom: 10px;
+}
+
+/* Style pour le titre du livre */
+.info-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.info-author {
+  font-size: 16px;
+  color: #ddd;
+}
+
+

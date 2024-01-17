@@ -34,7 +34,7 @@ export const books = [
   },
   {
     id: "004",
-    author: "Unknown",
+    author: "Florian FURNARI",
     country: "Sumer and Akkadian Empire",
     imageLink: "https://source.unsplash.com/bhBONc07WsI",
     language: "Akkadian",
@@ -45,7 +45,7 @@ export const books = [
   },
   {
     id: "005",
-    author: "Unknown",
+    author: "Florian FURNARI",
     country: "Achaemenid Empire",
     imageLink: "https://source.unsplash.com/g827ZOCwt30",
     language: "Hebrew",
@@ -56,7 +56,7 @@ export const books = [
   },
   {
     id: "006",
-    author: "Unknown",
+    author: "Florian FURNARI",
     country: "India/Iran/Iraq/Egypt/Tajikistan",
     imageLink: "https://source.unsplash.com/UhdlN7u87nA",
     language: "Arabic",
@@ -67,7 +67,7 @@ export const books = [
   },
   {
     id: "007",
-    author: "Unknown",
+    author: "Florian FURNARI",
     country: "Iceland",
     imageLink: "https://source.unsplash.com/zMRLZh40kms",
     language: "Old Norse",

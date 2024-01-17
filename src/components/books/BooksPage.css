@@ -1,74 +1,87 @@
 /* BooksPage.css */
 
 /* Style général pour le conteneur de la page */
-div {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  /* Style pour la liste des livres */
-  h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-  
-  /* Style pour le conteneur de la cellule "Auteur" */
-  div > div > div:first-child {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Style pour le texte "Auteur" */
-  div > div > div:first-child span {
-    cursor: pointer;
-  }
-  
-  /* Style pour la flèche indiquant l'ordre de tri */
-  div > div > div:first-child span::after {
-    content: '';
-    display: inline-block;
-    margin-left: 5px;
-  }
-  
-  /* Style pour la flèche ascendant */
-  div > div > div:first-child span[aria-sort='asc']::after {
-    content: '▲';
-  }
-  
-  /* Style pour la flèche descendant */
-  div > div > div:first-child span[aria-sort='desc']::after {
-    content: '▼';
-  }
-  
-  /* Style pour chaque livre dans la liste */
-  div > div > div:not(:first-child) {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-  
-  /* Style pour l'image du livre */
-  div > div > div:not(:first-child) img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  /* Style pour le titre du livre */
-  div > div > div:not(:first-child) > div:nth-child(2) {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  /* Style pour l'auteur du livre */
-  div > div > div:not(:first-child) > div:nth-child(3) {
-    font-size: 16px;
-    color: #555;
-    margin-top: 5px;
-  }
-  
+.books-page {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Style pour la liste des livres */
+.books-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Style pour le conteneur de la cellule "Auteur" */
+.sort-order {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.sort-order span::after {
+  content: '';
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Style pour la flèche indiquant l'ordre de tri */
+.sort-order span[aria-sort='asc']::after {
+  content: '▲';
+}
+
+/* Style pour la flèche descendant */
+.sort-order span[aria-sort='desc']::after {
+  content: '▼';
+}
+
+/* Style pour chaque livre dans la liste */
+.book-item {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  width: 500px;
+}
+
+/* Style pour l'image du livre */
+.book-item img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Style pour le titre du livre */
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style pour l'auteur du livre */
+.book-author {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Style pour le lien du livre */
+.book-link {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Style au survol du lien du livre */
+.book-link:hover {
+  color: #007bff;
+}
