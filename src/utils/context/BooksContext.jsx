@@ -1,11 +1,33 @@
-import { createContext, useState } from 'react';
-import { books } from '../../models/Books';
+import { createContext, useEffect, useState } from 'react';
+
 
 export const BooksContext = createContext();
 
 export const BooksProvider = ({ children }) => {
-  const [tableBooks, setTableBooks] = useState(books);
+  const [tableBooks, setTableBooks] = useState([]);
   const [sortOrder, setSortOrder] = useState('asc');
+
+  const BooksApi = async () => {
+    const apiUrl = "http://localhost:3000/book";
+    try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const allBooks = await response.json();
+          console.log("Books from API:", allBooks);
+         return setTableBooks(allBooks);
+      } catch (error) {
+          console.error('Error fetching books:', error);
+          throw error;
+      }
+  };
+
+  useEffect(() => {
+    BooksApi();
+  }, []);
+
+  
 
   const toggleSortOrder = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
@@ -41,12 +63,15 @@ export const BooksProvider = ({ children }) => {
 
   const sortedBooks = sortBooksByAuthor([...tableBooks], sortOrder);
 
+
+
   const contextValue = {
     tableBooks: sortedBooks,
     sortOrder,
     toggleSortOrder,
     deleteBook,
-    modifyBook
+    modifyBook,
+    BooksApi
   };
 
   return (
