@@ -1,27 +1,45 @@
-import { useReducer } from 'react';
+import { useReducer } from "react";
+import { todosReducer } from "./utils/reducer";
+import { todos } from "./models/todos";
+import { CHANGE_TODO_STATUS, DELETE_TODO } from "./utils/actions";
 
-// Définition du reducer
-const counterReducer = (state, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    case 'DECREMENT':
-      return state - 1;
-    default:
-      return state;
-  }
-};
-
-const Counter = () => {
-  const [count, dispatch] = useReducer(counterReducer, 0);
+function App() {
+  const [state, dispatch] = useReducer(todosReducer, {
+    todolist: todos,
+  });
 
   return (
-    <div>
-      <h2>Counter: {count}</h2>
-      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
-      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
-    </div>
+    <>
+      {state.todolist.map((t) => (
+        <div key={t.id}>
+          <span
+            onClick={() =>
+              dispatch({
+                type: CHANGE_TODO_STATUS,
+                payload: {
+                  id: t.id,
+                  done: !t.done,
+                },
+              })
+            }
+          >
+            {t.txt}
+          </span>{" "}
+          - {t.done ? "FAIT" : "PAS FAIT"}
+          <button
+            onClick={() =>
+              dispatch({
+                type: DELETE_TODO,
+                payload: t.id,
+              })
+            }
+          >
+            Supprimer
+          </button>
+        </div>
+      ))}
+    </>
   );
-};
+}
 
-export default Counter;
+export default App;
