@@ -1,12 +1,18 @@
-.app {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  width: 100vw;
-  user-select: none;
+.loading {
+  width: 0;
+  height: 0;
+  padding: 10px;
+  border: 3px solid purple;
+  border-bottom: transparent;
+  border-radius: 22px;
+  animation: rotating 0.7s infinite linear;
 }
 
-.smileys-box {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
 }

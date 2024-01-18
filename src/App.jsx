@@ -1,43 +1,23 @@
-import { useReducer } from "react";
-import { todosReducer } from "./utils/reducer";
-import { todos } from "./models/todos";
-import { CHANGE_TODO_STATUS, DELETE_TODO } from "./utils/actions";
+import { useFetchData } from "./utils/hooks";
+import "./App.css";
 
 function App() {
-  const [state, dispatch] = useReducer(todosReducer, {
-    todolist: todos,
-  });
+  const { data: todos, loading } = useFetchData("http://localhost:3000/books");
 
   return (
     <>
-      {state.todolist.map((t) => (
-        <div key={t.id}>
-          <span
-            onClick={() =>
-              dispatch({
-                type: CHANGE_TODO_STATUS,
-                payload: {
-                  id: t.id,
-                  done: !t.done,
-                },
-              })
-            }
-          >
-            {t.txt}
-          </span>{" "}
-          - {t.done ? "FAIT" : "PAS FAIT"}
-          <button
-            onClick={() =>
-              dispatch({
-                type: DELETE_TODO,
-                payload: t.id,
-              })
-            }
-          >
-            Supprimer
-          </button>
-        </div>
-      ))}
+      {loading ? (
+        <div className="loading"></div>
+      ) : (
+        <>
+          {todos.map((t) => (
+            <div key={t.id}>
+              <span>{t.txt}</span> - {t.done ? "FAIT" : "PAS FAIT"}
+              <button>Supprimer</button>
+            </div>
+          ))}
+        </>
+      )}
     </>
   );
 }
