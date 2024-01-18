@@ -6,12 +6,21 @@ import "./ModifyBook.css";
 
 function DetailsBook() {
   const { id } = useParams();
-  const { tableBooks } = useContext(BooksContext);
+  const { tableBooks, modifyBook  } = useContext(BooksContext);
   const books = tableBooks.find((b) => b.id == id);
 
   function handleSubmit(e){
-    console.log(e.target)
     e.preventDefault();
+    const updatedBook = {
+      title: e.target.title.value,
+      author: e.target.author.value,
+      country: e.target.country.value,
+      language: e.target.language.value,
+      pages: e.target.pages.value,
+      year: e.target.year.value,
+    };
+
+    modifyBook(id, updatedBook);
   }
 
   return (

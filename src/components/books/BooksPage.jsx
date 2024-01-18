@@ -1,16 +1,25 @@
 // BooksPage.jsx
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 import { BooksContext } from '../../utils/context/BooksContext';
 import './BooksPage.css';
 
 const BooksPage = () => {
   const { tableBooks, sortOrder, toggleSortOrder, deleteBook } = useContext(BooksContext);
 
+  function search(e){
 
+  }
 
   return (
     <div className="books-page">
+      <div>
+        <h2>Rechercher par titre</h2>
+        {/* <Form.Control
+        name="search"
+        type="text"
+        /> */}
+      </div>
       <h2>Liste des livres :</h2>
       <div className="books-container">
         <div className="sort-order">

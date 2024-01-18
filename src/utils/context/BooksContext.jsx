@@ -31,11 +31,13 @@ export const BooksProvider = ({ children }) => {
     setTableBooks(updateBook)
 
   }
-  const modifyBook =(book) => {
-    // const updateBook = tableBooks.filter((tablebook) => tablebook.id !== book.id )
-    // setTableBooks(updateBook)
-
-  }
+  const modifyBook = (bookId, updatedBook) => {
+    setTableBooks((prevBooks) => {
+      return prevBooks.map((book) =>
+        book.id === bookId ? { ...book, ...updatedBook } : book
+      );
+    });
+  };
 
   const sortedBooks = sortBooksByAuthor([...tableBooks], sortOrder);
 
